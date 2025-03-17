@@ -1,15 +1,15 @@
-import { kafka } from './kafka.ts';
-import * as _ from 'lodash';
+const { kafka } = require('./kafka.js');
+const _ = require('lodash');
 
-export const producer = kafka.producer();
-export const connect = async () => {
+producer = kafka.producer();
+connect = async () => {
     await producer.connect();
     console.log('Connected to Kafka producer');
 }
 
-export const send = async ({topic, messages, ...args}:any) => {
+send = async ({topic, messages, ...args}) => {
 
-    const _messages = _.map(messages, (m:any)=>{
+    const _messages = _.map(messages, (m)=>{
         return {...m,
             value: JSON.stringify(m.value)
         };
@@ -21,3 +21,5 @@ export const send = async ({topic, messages, ...args}:any) => {
         ...args
     });
 }
+
+module.exports = { producer, connect, send };

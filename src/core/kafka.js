@@ -1,16 +1,16 @@
-import { Kafka } from "kafkajs";
-import {
+const { Kafka } = require("kafkajs");
+const {
     awsIamAuthenticator,
     createMechanism,
     Type
-  } from '@jm18457/kafkajs-msk-iam-authentication-mechanism';
+  } = require('@jm18457/kafkajs-msk-iam-authentication-mechanism');
 
 const provider = awsIamAuthenticator({
     region: 'ap-south-1'
 });
 
 // console.log('Type', Type);
-console.log('brokers:', process.env.KAFKA_BROKERS);
+// console.log('brokers:', process.env.KAFKA_BROKERS);
 
 const kafka = new Kafka({
   clientId: process.env.KAFKA_CLIENT_ID,
@@ -24,4 +24,4 @@ const kafka = new Kafka({
   connectionTimeout: 3000
 });
 
-export {kafka};
+module.exports = {kafka};

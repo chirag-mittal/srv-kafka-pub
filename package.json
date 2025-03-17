@@ -2,8 +2,9 @@
   "name": "srv-kafka-pub",
   "version": "1.0.0",
   "main": "index.js",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -12,7 +13,9 @@
   "dependencies": {
     "24": "^0.0.0",
     "@jm18457/kafkajs-msk-iam-authentication-mechanism": "^3.1.1",
+    "body-parser": "^1.20.3",
     "dotenv": "^16.4.7",
+    "express": "^4.21.2",
     "kafkajs": "^2.2.4",
     "lodash": "^4.17.21"
   },
