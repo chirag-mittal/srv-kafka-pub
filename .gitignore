@@ -1,0 +1,16 @@
+node_modules
+
+# Build Files
+build
+dist
+
+# IDE Directors
+.cursor
+.idea
+.vscode
+
+# Env Files
+.env
+.env.local
+.env.development
+.env.production
