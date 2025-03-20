@@ -1,5 +1,8 @@
 FROM node:22-alpine
 
+# install curl for health checks
+RUN apk add --no-cache curl
+
 # Create app directory
 WORKDIR /app
 
